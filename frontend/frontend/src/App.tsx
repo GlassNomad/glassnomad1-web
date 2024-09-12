@@ -7,6 +7,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from "./Home/Home";
 import Products from "./Products/Products";
+import Orders from './Orders/Orders';
+import OrderDetail from './Orders/OrderDetail';
+import Payment from './Payment/Payment';
 
 function App() {
   const openMenu = () => {
@@ -31,7 +34,9 @@ function App() {
                 </div>
                 <div className="header-links">
                 <Link to="/">Home</Link>
-                <Link to="/">Catalog</Link>
+                <Link to="/catalog">Catalog</Link>
+                <Link to="/orders">Orders</Link>
+                <Link to="/payment">Payment</Link>
             </div>
             </header>
 
@@ -48,6 +53,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/orders:id" element={<OrderDetail />} />
+            <Route path="/payment" element={<Payment />} />
         </Routes>
         </main>
         <footer className ="footer">
